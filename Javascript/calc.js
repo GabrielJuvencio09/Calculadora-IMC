@@ -6,7 +6,7 @@ const form = document.querySelector('form');
 
 nome.focus();
 
-form.addEventListener('submit', function(event){
+form.addEventListener('submit', function(event) {
     event.preventDefault();
     
     let input = nome.value;
@@ -19,17 +19,11 @@ form.addEventListener('submit', function(event){
 
     if (imc <= 24.9) {
         document.querySelector('.dica').innerHTML = "Normal";
-    }
-
-    if (imc >= 25.9) {
+    } else if (imc >= 25.9 && imc < 30.0) {
         document.querySelector('.dica').innerHTML = "Sobrepeso";
-    }
-    
-    if (imc >= 30.0) {
+    } else if (imc >= 30.0 && imc < 40.0) {
         document.querySelector('.dica').innerHTML = "Obesidade";
-    }
-    
-    if (imc >= 40.0) {
+    } else {
         document.querySelector('.dica').innerHTML = "Obesidade Grave";
     }
 });
